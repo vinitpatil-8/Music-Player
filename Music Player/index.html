@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/Images/proc.jpg" type="image/png" sizes="16x16">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Music Player</title>
+</head>
+
+<body>
+    <!-- Universal Navbar -->
+    <nav class="nav">
+        <ul>
+            <li id="home1">Home</li>
+            <li id="explore">Explore</li>
+        </ul>
+    </nav>
+
+    <!-- Home Page  -->
+    <main id="home">
+
+        <!-- Current Song Image  -->
+
+        <div class="sngImg">
+            <img class="imgs" id="faded1" src="/Images/faded.jpg" alt="Faded">
+            <img class="imgs" id="lemme1" src="/Images/lemme.jpg" alt="Let Me Love You">
+        </div>
+
+        <!-- Progress slider -->
+
+        <div id="progress_bar">
+            <div id="progress"></div>
+        </div>
+
+        <!-- Song Playing -->
+
+        <div class="sng">
+            <audio id="lemme" src="/Audio/Let-Me-Love-You_320(PaglaSongs).mp3" type="audio/mpeg" preload="metadata"></audio>
+
+            <audio id="faded" src="/Audio/Faded_320(PaglaSongs).mp3" type="audio/mpeg" preload="metadata"></audio>
+
+            <!-- Controls  -->
+
+        </div>
+        <div class="controls">
+            <img class="back btn" id="back1" src="https://img.icons8.com/bubbles/50/000000/back.png" />
+            <img class="but btn" id="play" src="https://img.icons8.com/bubbles/50/000000/play.png" />
+            <img class="but btn" id="pause" src="https://img.icons8.com/bubbles/50/000000/circled-pause.png" />
+            <img class="next but btn" id="next1" src="https://img.icons8.com/bubbles/50/000000/more-than.png" />
+        </div>
+
+    </main>
+    <div id="exp">
+        Hey
+    </div>
+
+    <!-- Universal Footer  -->
+    <footer>
+        <pre>&copy; Copyright   @_Vinit_   2021 </pre>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+* {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+nav {
+    height: 16vh;
+    overflow-y: hidden;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 2vh;
+    width: 100%;
+    background-color: black;
+    align-items: center;
+    text-align: center;
+}
+
+nav ul li {
+    padding: 4vh;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    font-size: 3.5vh;
+    transition: font-size 1s, color 1s;
+}
+
+nav ul li:hover {
+    color: aliceblue;
+    font-size: 4vh;
+}
+
+main {
+    height: calc(100vh - 16vh - 10vh);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+
+#pause {
+    display: none;
+}
+
+.controls {
+    /* margin: 4vh; */
+    display: flex;
+    flex-direction: row;
+    padding: 7vh;
+}
+
+.but {
+    padding-left: 5vh;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.controls img {
+    align-self: center;
+}
+
+#play {
+    display: block;
+}
+
+footer {
+    display: flex;
+    background-color: black;
+    height: 10vh;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+footer pre {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+}
+
+#exp {
+    height: calc(100vh - 16vh - 10vh);
+    display: none;
+}
+
+#faded {
+    display: none;
+}
+
+#lemme {
+    display: block;
+}
+
+.imgs {
+    height: 40vh;
+    width: 40vh;
+}
+
+#faded1 {
+    display: none;
+}
+
+#progress_bar {
+    height: 2vh;
+    width: 50vh;
+    /* background: rgb(203, 203, 255); */
+    background-color: greenyellow;
+    margin-top: 3vh;
+    cursor: pointer;
+}
+
+#progress_bar:hover {
+    background-color: yellow;
+}
+
+#progress {
+    height: 2vh;
+    width: 0%;
+    background: red;
+    transition: all 1s;
+    position: relative;
+}
