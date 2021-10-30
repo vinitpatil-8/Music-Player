@@ -1,8 +1,5 @@
+let currentSong = 1;
 $(document).ready(function () {
-    let ofc;
-    let currentSong = 1;
-
-
     // play Function
     $("#play").click(function () {
         $(this).hide();
@@ -38,6 +35,7 @@ $(document).ready(function () {
     // explore function
     $("#explore").click(function () {
         $("#home").hide();
+        $("section").addClass("flexs");
         $("#exp").show();
         $("#lemme").trigger("pause");
         $("#faded").trigger("pause");
@@ -46,30 +44,32 @@ $(document).ready(function () {
     // next function
     $("#next1").click(function () {
         $("#lemme").hide();
-        $("#lemme").trigger("pause");
-        $("#faded").trigger("pause");
+        // $("#faded").trigger("pause");
         $("#faded1").show();
         $("#lemme1").hide();
         $("#faded").show();
-        $("#pause").hide();
-        $("#play").show();
+        $("#lemme").trigger("pause");
         document.getElementById("lemme").currentTime = 0;
-        document.getElementById("faded").currentTime = 0;
+        if (currentSong == 1) {
+            $("#play").show();
+            $("#pause").hide();
+        }
         currentSong = 2
     })
 
     // back function
     $("#back1").click(function () {
         $("#faded").hide();
-        $("#faded").trigger("pause");
-        $("#lemme").trigger("pause");
+        // $("#lemme").trigger("pause");
         $("#lemme").show();
-        document.getElementById("lemme").currentTime = 0;
         document.getElementById("faded").currentTime = 0;
-        $("#pause").hide();
-        $("#play").show();
         $("#faded1").hide();
         $("#lemme1").show();
+        $("#faded").trigger("pause");
+        if (currentSong == 2) {
+            $("#pause").hide();
+            $("#play").show();
+        }
         currentSong = 1
     })
 
@@ -110,5 +110,30 @@ $(document).ready(function () {
             unplay()
         }
     }, 500);
+
+    // On Song End
+
+    // For First Song
+    if (currentSong == 1) {
+        let playing = document.getElementById("lemme");
+        playing.onended = function() {
+            playing.currentTime = 0;
+            document.getElementById("pause").style.display = "none";
+            document.getElementById("play").style.display = "block";
+        }
+    }
+
+    // For Second Song 
+    setInterval(() => {
+        if (currentSong == 2) {
+            let plays = document.getElementById("faded");
+            plays.onended = function() {
+                plays.currentTime = 0;
+                document.getElementById("pause").style.display = "none";
+                document.getElementById("play").style.display = "block";
+            }
+        }
+    }, 100);
+
 
 });
